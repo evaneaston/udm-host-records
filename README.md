@@ -8,7 +8,9 @@ As of the creation of this repo, UDMs do not have a UI for administering host re
 
 The UDMs no longer resolve against the `/etc/hosts` file.  Instead they use records that must be administered via API.  You can edit them via code by `GET`'ting the `/services` endpoint to get the json response, changing the entries in `dnsForwarder`.`hostRecords`, and `PUT`'ting the the updated json back to the `/services` endpoint.  This was well documented in [this community topic](https://community.ui.com/questions/UDM-Base-How-to-add-static-hostname-for-dnsmasq-forwarder/88354ba8-2b7e-443c-8031-7ac680dafd47).
 
-These scripts should make it a little easier.
+These scripts should make the process a little easier.
+
+Once updated in the configuration, host records will persist restarts and become part of backups.
 
 # Verify Your Assumptions
 
