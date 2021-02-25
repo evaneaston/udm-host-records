@@ -10,12 +10,13 @@ The UDMs no longer resolve against the `/etc/hosts` file.  Instead they use reco
 
 These scripts should make the process a little easier.
 
-Once updated in the configuration, host records will persist restarts and become part of backups.
+Once scripts are executed
+* the changes take effect immediately
+* host records will persist restarts and become part of backups.
 
 # Verify Your Assumptions
 
-*  *Are you even configuring your networks to use the UDM as the DNS server?  If you've entered DNS servers that are the UDM into the **DHCP Name Server** field for your networks, then the host entries these scripts manage will not be consulted by your network clients when they resolve host ips.*
-
+*  *Have you configured your local networks to use nameservers other than the UDM?  If so, these scripts won't help you.  You need to set each local network's **DHCP Name Server** to automatic or to the ip of the UDM.  You can still use alternate DNS servers ouside your network.  You will juat need to config your WAN networks to forward to these DNS servers.*
 *  *These scripts do nothing with client aliases. While it wouldn't be a stretch to add a script that will capture all client aliases and the network domains and automatically register host records for each,that's not what these scripts do...yet ;)*
 
 # Install
