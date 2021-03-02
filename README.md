@@ -14,7 +14,7 @@ Once scripts are executed
 * the changes take effect immediately
 * host records will persist restarts and become part of backups.
 
-# Verify Your Assumptions
+# Verify Assumptions
 
 *  *Have you configured your local networks to use nameservers other than the UDM?  If so, these scripts won't help you.  You need to set each local network's **DHCP Name Server** to automatic or to the ip of the UDM.  You can still use alternate DNS servers ouside your network.  You will juat need to config your WAN networks to forward to these DNS servers.*
 *  *These scripts do nothing with client aliases. While it wouldn't be a stretch to add a script that will capture all client aliases and the network domains and automatically register host records for each,that's not what these scripts do...yet ;)*
@@ -44,10 +44,11 @@ list-host-records.sh
 To create or update a host record, use
 
 ```
-./add-host-record.sh <hostname>.<domain> <ipaddress> {<registernonqualified>}
-```
+./add-host-record.sh {-f} {-v 4|6} <hostname>.<domain> <ipaddress>
 
-Register non qualified indicates whether you want clients to be able to resolve IPs using just `<hostname>` without providing the fully-qualified domain.  This defaults to `true`.  So
+  -f     FQDN only.  Sets registerNonQualified=false on the host record.  Defaults to true.
+  -v     4 or 6.  Defaults to 4.  Ignored by UDM firmware < 1.9.
+```
 
 ```
 ./add-host-record.sh coffee-machine.yourlocaldomain.com 192.168.8.43
