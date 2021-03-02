@@ -24,4 +24,5 @@ fi
 export host=$(trim "$1")
 export ip=$(trim "$2")
 export regNonQual=${3:-true}
-updateServices '.dnsForwarder.hostRecords |= (. | map(. + { key: (.hostName | ascii_downcase), value: (.)}) | from_entries | . + ({ (env.host | ascii_downcase):{address:{address: (env.ip), origin: null}, hostName: (env.host), registerNonQualified: ("true" == env.regNonQual)}}) | to_entries | map(.value))'
+export ipVersion=$(trim "v4")
+updateServices '.dnsForwarder.hostRecords |= (. | map(. + { key: (.hostName | ascii_downcase), value: (.)}) | from_entries | . + ({ (env.host | ascii_downcase):{address:{address: (env.ip), origin: null, version: (env.ipVersion)}, hostName: (env.host), registerNonQualified: ("true" == env.regNonQual)}}) | to_entries | map(.value))'
