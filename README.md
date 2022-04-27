@@ -2,6 +2,10 @@
 
 Scripts to list, add, update, and remove host records in the Ubiquiti UniFI Dream Machine DNS forwarder.
 
+
+# DEPRECATED!!!!!
+___***This was a brief attempt at providing local network DNS resolution.  But because it's clear that the `hostRecords` are overwritten by Ubiquiti-owned code is a bunch of scenarios, it's clear that this approach to gaining a bit of local DNS control isn't valid.  Please consider running your own local DNS, such as PiHole instead***___
+
 # Description
 
 As of the creation of this repo, UDMs do not have a UI for administering host records.  But the DNS forwarder running on the device supports them.  If you don't already run your own DNS service and want to be able to resolve hosts by name in your UDM networks, you can add host records.  But it's tedious.
