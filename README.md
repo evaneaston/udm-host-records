@@ -4,7 +4,7 @@ Scripts to list, add, update, and remove host records in the Ubiquiti UniFI Drea
 
 
 # DEPRECATED!!!!!
-___***This was a brief attempt at providing local network DNS resolution.  But because it's clear that the `hostRecords` are overwritten by Ubiquiti-owned code is a bunch of scenarios, it's clear that this approach to gaining a bit of local DNS control isn't valid.  Please consider running your own local DNS, such as PiHole instead***___
+___***This was a brief attempt at providing local network DNS resolution.  But because it's clear that the `hostRecords` are overwritten by Ubiquiti-owned code in a bunch of scenarios that don't seem to warrant it, it's clear that this approach to gaining a bit of local DNS control isn't sustainable.  Please consider running your own local DNS, such as PiHole instead***___
 
 # Description
 
